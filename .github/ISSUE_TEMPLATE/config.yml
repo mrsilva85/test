@@ -1,5 +1,16 @@
-blank_issues_enabled: false
-contact_links:
-  - name: PayID Protocol Change
-    url: https://github.com/payid-org/rfcs/tree/master
-    about: Please submit an RFC here.
+curl --location --request POST 'http://127.0.0.1:8081/users' \
+  --header 'PayID-API-Version: 2020-06-18' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+       "payId": "alice$127.0.0.1",
+       "addresses": [
+           {
+               "paymentNetwork": "XRPL",
+               "environment": "TESTNET",
+               "details": {
+                  "address": "rrpNbkNL5icuAPPJ4F9FBEuzm5VVqKoiin",
+                   "tag": "silvaservice"
+               }
+           }
+       ]
+   }'
